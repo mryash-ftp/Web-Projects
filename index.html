@@ -11,39 +11,43 @@
             background-color: #fcfdfe; 
             color: #1a2634; 
             font-family: 'Plus Jakarta Sans', sans-serif; 
+            /* Text ko thoda scale up kiya taaki zoomed-out feel na aaye */
+            font-size: 17px; 
         }
         .glass-header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid #eef2f5;
+        }
+        /* Container ko wider kiya (max-w-6xl) */
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
         .card-modern {
             background: #ffffff;
             border: 1px solid #f0f3f6;
-            border-radius: 24px;
+            border-radius: 28px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 2rem; /* Spacing badha di */
         }
         .card-modern:hover {
             border-color: #3b82f6;
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.08);
         }
         .github-btn {
             background: #0f172a;
             color: white;
             transition: all 0.2s;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 13px;
         }
         .github-btn:hover { 
             background: #1e293b;
-            transform: translateY(-1px);
-        }
-        .badge {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 6px;
-            text-transform: uppercase;
+            transform: scale(1.03);
         }
         @keyframes marquee {
             0% { transform: translateX(100%); }
@@ -57,144 +61,126 @@
 </head>
 <body class="antialiased">
 
-    <nav class="glass-header sticky top-0 z-50 px-6 py-3">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">A</div>
-                <span class="font-extrabold text-lg tracking-tight text-slate-800">Alven <span class="text-blue-600">Library</span></span>
+    <nav class="glass-header sticky top-0 z-50 py-5">
+        <div class="container-custom flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-200">A</div>
+                <span class="font-extrabold text-2xl tracking-tight text-slate-800">Alven <span class="text-blue-600">Library</span></span>
             </div>
-            <a href="https://mryash-ftp.github.io/Alven/" class="text-xs font-bold text-slate-500 hover:text-blue-600 transition tracking-widest uppercase">
+            <a href="https://mryash-ftp.github.io/Alven/" class="text-sm font-bold text-slate-500 hover:text-blue-600 transition tracking-widest uppercase">
                 Portfolio ↗
             </a>
         </div>
     </nav>
 
-    <div class="w-full bg-white border-b border-slate-100 py-2 overflow-hidden whitespace-nowrap">
+    <div class="w-full bg-white border-b border-slate-100 py-3 overflow-hidden whitespace-nowrap">
         <div class="animate-marquee hover:pause cursor-default">
-            <span class="text-sm font-medium text-slate-500">
+            <span class="text-base font-medium text-slate-500">
                 🚀 New Project: <span class="text-blue-600 font-bold">Desktop Organizer UI</span> coming soon! &nbsp;&nbsp; • &nbsp;&nbsp; 🛠️ All scripts updated to Python 3.12 &nbsp;&nbsp; • &nbsp;&nbsp; <span class="text-red-500 font-bold">Discover Alven's Future Projects — Click Here →</span>
             </span>
         </div>
     </div>
 
-    <header class="max-w-5xl mx-auto pt-16 pb-12 px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight text-slate-900 tracking-tight">
+    <header class="container-custom pt-24 pb-20 text-center">
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] text-slate-900 tracking-tight">
             Elevate your <span class="text-blue-600">Workflow</span><br>with Python.
         </h2>
-        <p class="text-slate-500 max-w-xl mx-auto text-base md:text-lg">
+        <p class="text-slate-500 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed">
             High-performance automation tools designed for speed and daily efficiency.
         </p>
     </header>
 
-    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mb-16">
-        <div class="card-modern p-6">
-            <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-5 font-bold text-lg">P</div>
-            <h3 class="font-bold text-lg mb-2 text-slate-800">Python Tools</h3>
-            <p class="text-slate-500 text-xs leading-relaxed mb-5">Optimized scripts for system handling and logic processing.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="badge bg-blue-50 text-blue-600 border border-blue-100">SOURCE</span>
-                <span class="badge bg-slate-50 text-slate-500">LOGIC</span>
-            </div>
-            <a href="https://github.com/mryash-ftp" target="_blank" class="text-blue-600 text-xs font-extrabold hover:underline underline-offset-4 flex items-center gap-1">Browse Hub →</a>
+    <section class="container-custom grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div class="card-modern">
+            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-2xl shadow-sm">P</div>
+            <h3 class="font-extrabold text-2xl mb-3 text-slate-800">Python Tools</h3>
+            <p class="text-slate-500 text-base leading-relaxed mb-6">Optimized scripts for system handling and logic processing.</p>
+            <a href="https://github.com/mryash-ftp" target="_blank" class="text-blue-600 text-sm font-black hover:underline underline-offset-8 flex items-center gap-1">BROWSE HUB →</a>
         </div>
 
-        <div class="card-modern p-6">
-            <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-5 font-bold text-lg">D</div>
-            <h3 class="font-bold text-lg mb-2 text-slate-800">Data Visuals</h3>
-            <p class="text-slate-500 text-xs leading-relaxed mb-5">Turn raw numbers into interactive and clean visual insights.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="badge bg-purple-50 text-purple-600 border border-purple-100">ANALYTICS</span>
-                <span class="badge bg-slate-50 text-slate-500">GRAPHS</span>
-            </div>
-            <a href="#" class="text-purple-600 text-xs font-extrabold hover:underline underline-offset-4 flex items-center gap-1">Analyze Data →</a>
+        <div class="card-modern">
+            <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-2xl shadow-sm">D</div>
+            <h3 class="font-extrabold text-2xl mb-3 text-slate-800">Data Visuals</h3>
+            <p class="text-slate-500 text-base leading-relaxed mb-6">Turn raw numbers into interactive and clean visual insights.</p>
+            <a href="#" class="text-purple-600 text-sm font-black hover:underline underline-offset-8 flex items-center gap-1">ANALYZE DATA →</a>
         </div>
 
-        <div class="card-modern p-6">
-            <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-5 font-bold text-lg">A</div>
-            <h3 class="font-bold text-lg mb-2 text-slate-800">Auto Bot</h3>
-            <p class="text-slate-500 text-xs leading-relaxed mb-5">Kill repetitive tasks with simple, one-click automation scripts.</p>
-            <div class="flex gap-2 mb-6">
-                <span class="badge bg-emerald-50 text-emerald-600 border border-emerald-100">AUTO</span>
-                <span class="badge bg-slate-50 text-slate-500">SCRIPTS</span>
-            </div>
-            <a href="#" class="text-emerald-600 text-xs font-extrabold hover:underline underline-offset-4 flex items-center gap-1">Get Started →</a>
+        <div class="card-modern">
+            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 font-bold text-2xl shadow-sm">A</div>
+            <h3 class="font-extrabold text-2xl mb-3 text-slate-800">Auto Bot</h3>
+            <p class="text-slate-500 text-base leading-relaxed mb-6">Kill repetitive tasks with simple, one-click automation scripts.</p>
+            <a href="#" class="text-emerald-600 text-sm font-black hover:underline underline-offset-8 flex items-center gap-1">GET STARTED →</a>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 mb-20">
-        <div class="flex items-center gap-3 mb-8">
-            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Active Projects</h3>
+    <section class="container-custom mb-32">
+        <div class="flex items-center gap-4 mb-10">
+            <span class="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></span>
+            <h3 class="text-sm font-black text-slate-400 uppercase tracking-[0.2em]">Active Projects</h3>
         </div>
         
-        <div class="bg-white border border-slate-100 rounded-3xl shadow-sm overflow-hidden p-2">
+        <div class="bg-white border border-slate-100 rounded-[40px] shadow-sm overflow-hidden p-4">
             
-            <div class="p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 rounded-2xl hover:bg-slate-50 transition">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-lg">📁</div>
+            <div class="p-8 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 rounded-[30px] hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                <div class="flex items-center gap-6">
+                    <div class="w-14 h-14 bg-white border border-slate-100 rounded-2xl flex items-center justify-center text-3xl shadow-sm">📁</div>
                     <div>
-                        <h4 class="font-bold text-slate-800 text-sm">Desktop Date-Wise Organizer</h4>
-                        <div class="flex gap-2 mt-1">
-                            <span class="text-[9px] font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded border border-orange-100">UNDER DEV</span>
-                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-xl">Desktop Date-Wise Organizer</h4>
+                        <span class="inline-block mt-2 text-[11px] font-black text-orange-500 bg-orange-50 px-3 py-1 rounded-full border border-orange-100 uppercase tracking-tighter">Under Development</span>
                     </div>
                 </div>
-                <a href="https://github.com/mryash-ftp/Windows-Desktop-Cleaner-Py" target="_blank" class="github-btn px-5 py-2 text-[10px] font-bold">GITHUB CODE</a>
+                <a href="https://github.com/mryash-ftp/Windows-Desktop-Cleaner-Py" target="_blank" class="github-btn text-center">GITHUB REPOSITORY</a>
             </div>
 
-            <div class="p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 rounded-2xl hover:bg-slate-50 transition">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-lg">⚡</div>
+            <div class="p-8 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 rounded-[30px] hover:bg-slate-50 transition border border-transparent hover:border-slate-100 mt-2">
+                <div class="flex items-center gap-6">
+                    <div class="w-14 h-14 bg-white border border-slate-100 rounded-2xl flex items-center justify-center text-3xl shadow-sm">⚡</div>
                     <div>
-                        <h4 class="font-bold text-slate-800 text-sm">PyConvert Pro</h4>
-                        <div class="flex gap-2 mt-1">
-                            <span class="text-[9px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">V2.0 STABLE</span>
-                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-xl">PyConvert Pro</h4>
+                        <span class="inline-block mt-2 text-[11px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100 uppercase tracking-tighter">V2.0 Stable</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <a href="https://drive.google.com/uc?export=download&id=1bSQ32sQpl0doE6c3-1khVheIGttMP5vV" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-[10px] font-bold rounded-lg transition shadow-md shadow-blue-50">EXE</a>
-                    <a href="https://github.com/mryash-ftp/Alven-Automation-Hub/tree/main/1-PyConvert-Pro" class="github-btn px-5 py-2 text-[10px] font-bold">CODE</a>
+                <div class="flex items-center gap-4">
+                    <a href="https://drive.google.com/uc?export=download&id=1bSQ32sQpl0doE6c3-1khVheIGttMP5vV" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-sm font-bold rounded-xl transition shadow-lg shadow-blue-100">DOWNLOAD EXE</a>
+                    <a href="https://github.com/mryash-ftp/Alven-Automation-Hub/tree/main/1-PyConvert-Pro" class="github-btn">VIEW CODE</a>
                 </div>
             </div>
 
-            <div class="p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 rounded-2xl hover:bg-slate-50 transition">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-lg">📦</div>
+            <div class="p-8 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 rounded-[30px] hover:bg-slate-50 transition border border-transparent hover:border-slate-100 mt-2">
+                <div class="flex items-center gap-6">
+                    <div class="w-14 h-14 bg-white border border-slate-100 rounded-2xl flex items-center justify-center text-3xl shadow-sm">📦</div>
                     <div>
-                        <h4 class="font-bold text-slate-800 text-sm">Directory Master</h4>
-                        <div class="flex gap-2 mt-1">
-                            <span class="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">BULK TOOL</span>
-                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-xl">Directory Master</h4>
+                        <span class="inline-block mt-2 text-[11px] font-black text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 uppercase tracking-tighter">Bulk Tool</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <a href="https://drive.google.com/uc?export=download&id=1XZVaI78Gl7CH2iV1l3HllXH01PEgB3ZC" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-[10px] font-bold rounded-lg transition shadow-md shadow-blue-50">EXE</a>
-                    <a href="https://github.com/mryash-ftp/Alven-Automation-Hub/tree/main/2-Directory-Master" class="github-btn px-5 py-2 text-[10px] font-bold">CODE</a>
+                <div class="flex items-center gap-4">
+                    <a href="https://drive.google.com/uc?export=download&id=1XZVaI78Gl7CH2iV1l3HllXH01PEgB3ZC" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-sm font-bold rounded-xl transition shadow-lg shadow-blue-100">DOWNLOAD EXE</a>
+                    <a href="https://github.com/mryash-ftp/Alven-Automation-Hub/tree/main/2-Directory-Master" class="github-btn">VIEW CODE</a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="bg-[#0a0f18] text-white py-12 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-slate-800/50">
+    <footer class="bg-[#0a0f18] text-white py-20">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 pb-16 border-b border-slate-800/60">
                 <div>
-                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3">Get in Touch</p>
-                    <a href="mailto:mryashftp@gmail.com" class="text-xl font-bold hover:text-blue-400 transition">mryashftp@gmail.com</a>
+                    <p class="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-4">Contact Info</p>
+                    <a href="mailto:mryashftp@gmail.com" class="text-3xl font-extrabold hover:text-blue-400 transition tracking-tight">mryashftp@gmail.com</a>
                 </div>
                 <div class="md:text-right">
-                    <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3">Legal Representative</p>
-                    <p class="text-lg font-bold text-slate-200 tracking-tight">Pradeep Kumar Gupta — <span class="text-blue-500 font-extrabold">Alven Alex</span></p>
+                    <p class="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-4">Legal Representative</p>
+                    <p class="text-2xl font-bold text-slate-200">Pradeep Kumar Gupta — <span class="text-blue-500 font-extrabold">Alven Alex</span></p>
                 </div>
             </div>
             
-            <div class="flex flex-col md:flex-row justify-between items-center mt-10 gap-6">
-                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">© 2026 Alven Alex Library</p>
-                <div class="flex gap-8">
-                    <a href="https://github.com/mryash-ftp" target="_blank" class="text-[11px] font-black text-slate-400 hover:text-white transition tracking-widest">GITHUB</a>
-                    <a href="https://www.linkedin.com/in/pradeep-alven-dev/" target="_blank" class="text-[11px] font-black text-slate-400 hover:text-white transition tracking-widest">LINKEDIN</a>
+            <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8">
+                <p class="text-sm text-slate-500 font-bold uppercase tracking-widest">© 2026 Alven Alex Library</p>
+                <div class="flex gap-10">
+                    <a href="https://github.com/mryash-ftp" target="_blank" class="text-xs font-black text-slate-400 hover:text-white transition tracking-[0.2em]">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/pradeep-alven-dev/" target="_blank" class="text-xs font-black text-slate-400 hover:text-white transition tracking-[0.2em]">LINKEDIN</a>
                 </div>
             </div>
         </div>
